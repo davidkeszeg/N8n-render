@@ -1,0 +1,51 @@
+# ────────────── n8n specifikus ──────────────
+n8n-data/
+.files/
+.local/
+
+# Ignore database & binary state
+*.sqlite
+*.sqlite-journal
+*.db
+*.db-journal
+
+# ────────────── Sensitive config ──────────────
+.env
+.env.*
+!.env.example
+
+# ────────────── Node.js ──────────────
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ────────────── Logs ──────────────
+*.log
+logs/
+*.pid
+
+# ────────────── System/IDE ──────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ────────────── OS Files ──────────────
+*.swp
+*.bak
+*.tmp
+
+# ────────────── Docker (ha használsz) ──────────────
+docker-compose.override.yml
+*.tar
+*.img
+
+# ────────────── Test, coverage ──────────────
+coverage/
+__snapshots__/
+jest.config.js
+
+# ────────────── Git hooks cache (husky/staged-lint) ──────────────
+.husky/_/

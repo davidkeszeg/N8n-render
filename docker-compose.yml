@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  n8n:
+    image: n8n/n8n
+    # Ez alapvető beállítás, de éles környezetben érdemes más DB-t használni
+    # A volumes rész a .n8n mappát menti el, ahol a workflow-k vannak
+    # Ha új telepítés, akkor még nem lesz benne semmi, de így perzisztens lesz
+    volumes:
+      - ./n8n-data:/home/node/.n8n
+    ports:
+      - "5678:5678"
+    # Ide fogjuk tenni a környezeti változókat, de most még a Render UI-n keresztül
+    # environment:
+    #   - N8N_BASIC_AUTH_ACTIVE=true
+    #   - N8N_BASIC_AUTH_USER=felhasználónév
+    #   - N8N_BASIC_AUTH_PASSWORD=jelszó
+    #   - MY_API_KEY=az_én_szuper_api_kulcsom
